@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore | Tienda educativa</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/app.js" defer></script>
+</head>
+
+<body>
+    <header class="barra">
+        <a class="marca" href="#inicio">&#x26A1; Tech<span>Store</span></a>
+        <nav aria-label="Navegación principal">
+            <a href="#productos">Productos</a><a href="#carrito">Carrito <span id="contador"
+                    class="contador">0</span></a>
+            <a href="#laboratorio">Mi laboratorio</a>
+           <button id="cambiar-tema" class="boton-tema" type="button" aria-pressed="false">&#127769; Modo oscuro</button>
+        </nav>
+    </header>
+    <main>
+        <section class="hero" id="inicio">
+            <div>
+                <span class="etiqueta">PROYECTO DE HTML + CSS + JAVASCRIPT</span>
+                <h1>Tu espacio.<br><span>Tu tecnología.</span></h1>
+                <p>Explora accesorios para tu escritorio y aprende a programar una tienda interactiva.</p>
+                <a class="boton" href="#productos">Explorar productos ↗</a>
+            </div>
+            <img src="imagenes/portada.png" alt="Fotografía de audífonos, teclado y mouse con iluminación de colores">
+        </section>
+        <div class="beneficios" aria-label="Características del proyecto">
+            <p>&#x1F69A; <strong>Envíos simulados</strong><small>Proyecto académico</small></p>
+            <p>&#x1F6D2; <strong>Carrito interactivo</strong><small>Agrega y cambia cantidades</small></p>
+            <p>&#x1F4BE; <strong>Datos guardados</strong><small>Usamos localStorage</small></p>
+        </div>
+        <div class="contenido">
+            <section id="productos" class="catalogo">
+                <div class="titulo">
+                    <div><span class="sobretitulo">CATÁLOGO</span>
+                        <h2>Productos destacados</h2>
+                    </div>
+                    <span class="pildora">4 productos</span>
+                </div>
+                <div class="filtros">
+                    <label for="busqueda">Buscar producto</label>
+                    <input id="busqueda" type="search" placeholder="Ej. teclado, mouse...">
+                    <label for="categoria">Categoría</label>
+                    <select id="categoria">
+                        <option value="Todas">Todas</option>
+                        <option value="Audio">Audio</option>
+                        <option value="Periféricos">Periféricos</option>
+                        <option value="Accesorios">Accesorios</option>
+                    </select>
+                </div>
+                <div id="lista-productos" class="productos"></div>
+            </section>
+            <aside id="carrito" class="panel-carrito">
+                <div class="titulo">
+                    <div><span class="sobretitulo">TU SELECCIÓN</span>
+                        <h2>&#x1F6CD;&#xFE0F; Mi
+                            carrito</h2>
+                    </div>
+                </div>
+                <div id="lista-carrito" class="lista-carrito" aria-live="polite"></div>
+                <div class="resumen"><span>Subtotal</span><strong>$<span id="total">0.00</span></strong></div>
+                <p class="nota">Envío y pago simulados. No se cobra dinero.</p>
+                <button type="button" id="vaciar" class="boton gris">Vaciar carrito</button>
+                <form id="formulario">
+                    <h3>Finalizar compra de prueba</h3>
+                    <label for="nombre">Nombre completo</label>
+                    <input id="nombre" type="text" minlength="3" required placeholder="Escribe tu nombre">
+                    <label for="correo">Correo electrónico</label>
+                    <input id="correo" type="email" required placeholder="nombre@ejemplo.com">
+                    <button class="boton verde" type="submit">Confirmar compra ✓</button>
+                </form>
+                <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+            </aside>
+        </div>
+        <section id="laboratorio" class="laboratorio">
+            <span class="sobretitulo">APRENDE CON TU CARRITO</span>
+            <h2>&#x1F50E; Así funcionan JSON y localStorage</h2>
+            <p class="intro">Agrega un producto y observa cómo los datos pasan de JavaScript al navegador.</p>
+            <div class="pasos">
+                <article>
+                    <span class="numero">1</span>
+                    <h3>Arreglo en JavaScript</h3>
+                    <p>Los productos están en la variable <code>carrito</code>.</p>
+                    <pre id="vista-arreglo">[]</pre>
+                </article>
+                <article>
+                    <span class="numero">2</span>
+                    <h3>Conversión a JSON</h3>
+                    <p><code>JSON.stringify()</code> convierte ese arreglo en texto.</p>
+                    <pre id="vista-json">[]</pre>
+                </article>
+                <article>
+                    <span class="numero">3</span>
+                    <h3>Guardado en el navegador</h3>
+                    <p><code>localStorage</code> conserva el texto, incluso después de F5.</p>
+                    <p class="clave">Clave: <strong>techstore_carrito</strong></p>
+                    <pre id="vista-storage">(vacío)</pre>
+                </article>
+            </div>
+            <p id="estado" class="estado">&#x1F4A1; Prueba: agrega un producto, mira los cuadros y actualiza la página.
+            </p>
+        </section>
+    </main>
+    <footer>&#x26A1; TechStore · Laboratorio de Desarrollo de Software V · Proyecto educativo, sin pagos
+        reales.</footer>
+</body>
+
+</html>
 <!--Escribe tu html aqui, es gratis!!!

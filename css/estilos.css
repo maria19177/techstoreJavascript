@@ -1,1 +1,592 @@
+/* 1. BASE Y COLORES */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fd;
+    color: #172340;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button,
+.boton {
+    cursor: pointer;
+}
+
+:focus-visible {
+    outline: 3px solid #38bdf8;
+    outline-offset: 3px;
+}
+
+/* 2. BARRA Y PORTADA */
+.barra {
+    background: #101c3b;
+    color: white;
+    padding: 16px max(5%, calc((100% - 1200px) / 2));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.marca {
+    color: white;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.marca span,
+.hero h1 span {
+    color: #61b5ff;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+}
+
+nav a {
+    color: #e9f0ff;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #61b5ff;
+}
+
+.contador {
+    display: inline-block;
+    background: #287cff;
+    padding: 3px 7px;
+    border-radius: 12px;
+}
+
+.hero {
+    max-width: 1200px;
+    margin: 24px auto 0;
+    padding: 42px 55px;
+    border-radius: 20px;
+    color: white;
+    background: linear-gradient(120deg, #112451, #34318d);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: clamp(34px, 4vw, 56px);
+    line-height: 1.12;
+    margin: 16px 0;
+}
+
+.hero p {
+    max-width: 430px;
+    color: #dce7ff;
+    line-height: 1.6;
+}
+
+.hero img {
+    width: 100%;
+    height: 245px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.etiqueta,
+.sobretitulo {
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    font-weight: bold;
+    color: #477ae8;
+}
+
+.etiqueta {
+    color: #a8d9ff;
+}
+
+.boton {
+    display: inline-block;
+    border: 0;
+    border-radius: 9px;
+    padding: 12px 18px;
+    background: #2779f5;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.boton:hover {
+    filter: brightness(1.1);
+}
+
+.beneficios {
+    max-width: 1200px;
+    margin: 14px auto 25px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.beneficios p {
+    margin: 0;
+    padding: 15px;
+    background: white;
+    border: 1px solid #e1e8f5;
+    border-radius: 12px;
+}
+
+.beneficios small {
+    display: block;
+    margin: 6px 0 0 27px;
+    color: #6e7890;
+}
+
+/* 3. CATÁLOGO Y CARRITO */
+.contenido {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 20px;
+}
+
+.catalogo,
+.panel-carrito,
+.laboratorio {
+    background: white;
+    border: 1px solid #e1e8f5;
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+h2 {
+    margin: 7px 0 18px;
+    font-size: 25px;
+}
+
+h3 {
+    margin: 8px 0 12px;
+}
+
+.pildora {
+    background: #edf3ff;
+    color: #2762bd;
+    padding: 7px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+.filtros {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px 12px;
+    margin-bottom: 20px;
+}
+
+.filtros label,
+form label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #56647d;
+}
+
+.filtros input,
+.filtros select,
+form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccd7ea;
+    border-radius: 8px;
+    background: white;
+}
+
+.filtros label:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.filtros label:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.tarjeta {
+    border: 1px solid #e2e9f3;
+    border-radius: 13px;
+    overflow: hidden;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px #1c2a4d18;
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 170px;
+    display: block;
+    object-fit: cover;
+    background: #e6edfb;
+}
+
+.detalle {
+    padding: 15px;
+}
+
+.categoria {
+    font-size: 12px;
+    color: #386fcb;
+}
+
+.detalle h3 {
+    font-size: 17px;
+    min-height: 22px;
+}
+
+.precio {
+    color: #087d64;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.detalle button {
+    width: 100%;
+}
+
+.lista-carrito {
+    min-height: 65px;
+}
+
+.fila {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eaf0f7;
+}
+
+.fila img {
+    width: 53px;
+    height: 53px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.fila .info {
+    flex: 1;
+    font-size: 13px;
+}
+
+.fila strong {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.fila button {
+    border: 1px solid #c9d8ee;
+    border-radius: 6px;
+    background: white;
+    padding: 3px 9px;
+}
+
+.resumen {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 0;
+    font-size: 18px;
+}
+
+.resumen strong {
+    color: #1666df;
+}
+
+.nota {
+    color: #6c7890;
+    font-size: 12px;
+}
+
+.gris {
+    background: #64748b;
+    width: 100%;
+}
+
+.verde {
+    background: #07966b;
+    width: 100%;
+    margin-top: 12px;
+}
+
+form {
+    border-top: 1px solid #e3ebf6;
+    margin-top: 20px;
+    padding-top: 12px;
+}
+
+form input {
+    margin: 7px 0 12px;
+}
+
+.mensaje {
+    color: #087d64;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.vacio {
+    color: #6d7890;
+    background: #f3f7ff;
+    padding: 16px;
+    border-radius: 9px;
+}
+
+/* 4. LABORATORIO JSON Y LOCALSTORAGE */
+.laboratorio {
+    max-width: 1200px;
+    margin: 22px auto 30px;
+}
+
+.intro {
+    color: #65718b;
+}
+
+.pasos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.pasos article {
+    background: #f2f6ff;
+    border: 1px solid #dce7ff;
+    border-radius: 12px;
+    padding: 16px;
+    min-width: 0;
+}
+
+.numero {
+    display: inline-grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #286ff0;
+    color: white;
+    font-weight: bold;
+}
+
+.pasos h3 {
+    font-size: 16px;
+}
+
+.pasos p {
+    color: #60718b;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.pasos pre {
+    background: #16213d;
+    color: #d7eaff;
+    border-radius: 8px;
+    padding: 13px;
+    font-size: 12px;
+    overflow: auto;
+    min-height: 100px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.pasos code {
+    color: #1c65d7;
+}
+
+.clave {
+    background: #e3eeff;
+    border-radius: 6px;
+    padding: 7px;
+    overflow-wrap: anywhere;
+}
+
+.estado {
+    background: #e6f8f0;
+    color: #14634d;
+    padding: 12px;
+    border-radius: 9px;
+}
+
+footer {
+    background: #101c3b;
+    text-align: center;
+    padding: 26px;
+    color: #dbe5ff;
+    font-size: 13px;
+}
+
+/* 5. PANTALLAS PEQUEÑAS */
+@media (max-width: 750px) {
+
+    .barra,
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero,
+    .contenido {
+        margin-left: 12px;
+        margin-right: 12px;
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 28px;
+        text-align: center;
+    }
+
+    .hero img {
+        max-height: 180px;
+    }
+
+    .beneficios {
+        margin: 12px;
+        grid-template-columns: 1fr;
+    }
+
+    .pasos {
+        grid-template-columns: 1fr;
+    }
+
+    .laboratorio {
+        margin: 20px 12px;
+    }
+}
+
+@media (max-width: 450px) {
+    .productos {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 5. MODO OSCURO */
+.boton-tema {
+    padding: 9px 12px;
+    border: 1px solid #667da9;
+    border-radius: 9px;
+    background: #233963;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+boton-tema:hover {
+    background: #365487;
+}
+
+body.oscuro {
+    background: #101725;
+    color: #edf3ff;
+}
+
+oscuro .beneficios p,
+.oscuro .catalogo,
+.oscuro .panel-carrito,
+.oscuro .laboratorio,
+.oscuro .tarjeta {
+    background: #1b2639;
+    border-color: #35455e;
+}
+
+.oscuro .beneficios small,
+.oscuro .nota,
+.oscuro .intro,
+.oscuro .filtros label,
+.oscuro form label,
+.oscuro .pasos p {
+    color: #b1c2dc;
+}
+
+.oscuro .pasos article,
+.oscuro .vacio {
+    background: #24334c;
+    border-color: #405272;
+    color: #ebf3ff;
+}
+
+.oscuro .filtros input,
+.oscuro .filtros select,
+.oscuro form input,
+.oscuro .fila button {
+    background: #111d30;
+    color: white;
+    border-color: #51627f;
+}
+
+.oscuro input::placeholder {
+    color: #99abc7;
+}
+
+.oscuro .fila,
+oscuro form {
+    border-color: #405272;
+}
+
+.oscuro .pildora,
+.oscuro .clave {
+    background: #324468;
+    color: #cae0ff;
+}
+
+.oscuro .sobretitulo,
+.oscuro .categoria,
+.oscuro .pasos code {
+    color: #89baff;
+}
+
+.oscuro .precio,
+.oscuro .mensaje {
+    color: #6fe5bd;
+}
+
+.oscuro .resumen strong {
+    color: #83baff;
+}
+
+.oscuro .estado {
+    background: #174439;
+    color: #a5f2da;
+}
 /*Aqui pones tu css 
